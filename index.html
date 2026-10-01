@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sri Charan Sripadi · AI Engineer</title>
+<title>Sri Charan Sripadi | AI Engineer</title>
 <meta name="description" content="AI Engineer building agentic AI systems and the evaluation, fine-tuning and MLOps around them. MSc Advanced AI & Data Science, University of Liverpool.">
-<meta property="og:title" content="Sri Charan Sripadi · AI Engineer">
+<meta property="og:title" content="Sri Charan Sripadi | AI Engineer">
 <meta property="og:description" content="Agentic AI, LLM evaluation and MLOps. Open-source work on Google ADK and AWS Strands Agents gaps, with measured results.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://charansripadi.github.io/">
@@ -107,11 +107,11 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
 
 <main id="top">
   <div class="wrap hero">
-    <div class="eyebrow">AI Engineer · Agentic AI, LLM Evaluation &amp; MLOps</div>
-    <h1>I build AI agents, and the evaluation, fine-tuning and deployment that make them trustworthy.</h1>
-    <p class="lead">MSc Advanced AI &amp; Data Science student at the University of Liverpool. My recent open-source work
-      closes gaps raised in Google's Agent Development Kit and AWS Strands Agents, with every result measured on
-      held-out data and published with its limitations.</p>
+    <div class="eyebrow">AI Engineer | Agentic AI, LLM Evaluation and MLOps</div>
+    <h1>I build AI agents, and I test them properly before they ship.</h1>
+    <p class="lead">I'm an MSc student in Advanced AI and Data Science at the University of Liverpool. My recent open-source
+      projects address open feature requests in Google's Agent Development Kit and AWS Strands Agents. I report each
+      result on held-out data, along with its limits.</p>
     <div class="actions">
       <a class="btn primary" href="#projects">See projects</a>
       <a class="btn" href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -134,14 +134,14 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
 
         <article class="card">
           <span class="tag">Fine-tuning · Calibration · MLOps</span>
-          <h3>TinyJudge: a fine-tuned, calibrated judge for AI-agent behaviour</h3>
+          <h3>TinyJudge: a fine-tuned, calibrated judge for AI agent behaviour</h3>
           <p>LLM judges are slow and costly for simple yes/no checks and give no calibrated confidence, a gap raised in
             <a href="https://github.com/strands-agents/harness-sdk/issues/4585" target="_blank" rel="noopener">AWS Strands Agents #4585</a>.
             TinyJudge fine-tunes ModernBERT-base (150M parameters) to check policy compliance, tool choice and whether replies
             are faithful to tool results, then escalates only the uncertain cases to an LLM.</p>
           <div class="metrics">
             <div class="metric"><b>88.0% vs 81.2%</b><span>accuracy vs a 27B LLM judge, 208 real agent conversations</span></div>
-            <div class="metric"><b>ECE 0.20 → 0.10</b><span>calibration error halved; faithfulness accuracy 74% → 84%</span></div>
+            <div class="metric"><b>ECE 0.20 to 0.10</b><span>calibration error halved; faithfulness accuracy rose from 74% to 84%</span></div>
             <div class="metric"><b>89.9% · 35%</b><span>cascade accuracy, with only 35% of cases sent to the LLM</span></div>
           </div>
           <ul>
@@ -155,7 +155,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
             <a class="btn small primary" href="https://github.com/Charansripadi/tinyjudge" target="_blank" rel="noopener">Code</a>
             <a class="btn small" href="https://huggingface.co/CharanSripadi/tinyjudge" target="_blank" rel="noopener">Model on Hugging Face</a>
           </div>
-          <p class="honest">Limits: one demo domain; 38–85 real test examples per task, so small differences are within noise.</p>
+          <p class="honest">Limits: one demo domain, and only 38 to 85 real test examples per task, so small differences are within noise.</p>
         </article>
 
         <article class="card">
@@ -167,14 +167,14 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
             <a href="https://github.com/google/adk-python/issues/5398" target="_blank" rel="noopener">Google ADK #5398</a>.</p>
           <div class="metrics">
             <div class="metric"><b>ARI 0.93 vs 0.48</b><span>LLM intent mining vs a TF-IDF clustering baseline</span></div>
-            <div class="metric"><b>75% → 100%</b><span>procedure compliance with mined skills (pilot A/B, 8 pairs)</span></div>
-            <div class="metric"><b>1 → 0</b><span>policy violations; the refund skill learned the rule from traces</span></div>
+            <div class="metric"><b>75% to 100%</b><span>procedure compliance with mined skills (pilot A/B, 8 pairs)</span></div>
+            <div class="metric"><b>1 to 0</b><span>policy violations; the refund skill learned the rule from traces</span></div>
           </div>
           <ul>
             <li>ADK trace-recorder plugin, LLM customer simulator with personas and hidden ground truth.</li>
             <li>Privacy Guard that redacts personal data using values seen in tool calls; paired A/B Validator (exact McNemar);
               Drift Watcher that retires skills when tools change.</li>
-            <li>Found and fixed a retry bug that could re-run side-effecting tools, by retrying model calls instead of agent turns.</li>
+            <li>Fixed a bug where retrying a rate-limited agent turn ran refund and email tools twice. Retries now happen per model call.</li>
           </ul>
           <div class="stack"><span>Google ADK</span><span>Multi-agent</span><span>LiteLLM</span><span>Groq</span><span>scikit-learn</span><span>Pytest</span></div>
           <div class="row">
@@ -190,7 +190,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
             <p>Four cooperating agents (Loader, Vision, Audio, NLP) coordinated by a FusionController with &lt;200 ms inter-agent
               latency, producing structured summaries, tags and emotion estimates with 91% label consistency over 50+ videos.</p>
             <div class="stack"><span>PyTorch</span><span>NLP</span><span>Docker</span><span>Pytest</span></div>
-            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">View on GitHub</a>
           </article>
           <article class="card mini">
             <span class="tag">Computer vision · Audio</span>
@@ -198,7 +198,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
             <p><b>Driver Drowsiness Detection:</b> real-time OpenCV/Dlib web app, 95% detection accuracy over 200+ sessions,
               24 FPS Flask API.<br><b>Speech Emotion Recognition:</b> 7 classes, 88% accuracy on 10,000 samples, &lt;300 ms
               inference on AWS EC2.</p>
-            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">View on GitHub</a>
           </article>
         </div>
       </div>
@@ -212,12 +212,12 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
       <div class="grid2">
         <article class="card mini">
           <h3>Independent AI Engineer</h3>
-          <p>2023 – present · open-source agent tooling and ML systems, from data generation and fine-tuning to Docker-based
-            deployment with CI/CD and thorough Pytest suites.</p>
+          <p>2023 - present. I build open-source agent tooling and ML systems, from data generation and fine-tuning to
+            deployment with Docker, CI/CD and Pytest suites.</p>
         </article>
         <article class="card mini">
           <h3>Contributor · Hugging Face Transformers</h3>
-          <p>2025 – present · <a href="https://github.com/huggingface/transformers/pull/46777" target="_blank" rel="noopener">PR #46777</a>
+          <p>2025 - present. <a href="https://github.com/huggingface/transformers/pull/46777" target="_blank" rel="noopener">PR #46777</a>
             replaced wildcard imports with explicit named imports in the TimeSformer model module (resolves issue #45306).</p>
         </article>
       </div>
@@ -241,8 +241,8 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
     <div class="wrap">
       <h2>Education &amp; certifications</h2>
       <div class="timeline card">
-        <div class="item"><div><b>MSc Advanced Artificial Intelligence and Data Science</b><span>University of Liverpool, UK</span></div><span>2025 – present</span></div>
-        <div class="item"><div><b>BTech in Artificial Intelligence and Data Science</b><span>KL University, India · GPA 9.4 / 10, First Class with Distinction</span></div><span>2021 – 2025</span></div>
+        <div class="item"><div><b>MSc Advanced Artificial Intelligence and Data Science</b><span>University of Liverpool, UK</span></div><span>2025 - present</span></div>
+        <div class="item"><div><b>BTech in Artificial Intelligence and Data Science</b><span>KL University, India · GPA 9.4 / 10, First Class with Distinction</span></div><span>2021 - 2025</span></div>
         <div class="item"><div><b>TensorFlow Developer Certification</b><span>Google</span></div><span>2024</span></div>
         <div class="item"><div><b>Google Cloud Associate Cloud Engineer</b><span>Google Cloud</span></div><span>2024</span></div>
       </div>
