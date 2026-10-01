@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Charan Sripadi · AI Engineer</title>
+<meta name="description" content="AI Engineer building agentic AI systems and the evaluation, fine-tuning and MLOps around them. MSc Advanced AI & Data Science, University of Liverpool.">
+<meta property="og:title" content="Sri Charan Sripadi · AI Engineer">
+<meta property="og:description" content="Agentic AI, LLM evaluation and MLOps. Open-source work on Google ADK and AWS Strands Agents gaps, with measured results.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://charansripadi.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f6feb'/><text x='50' y='66' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SC</text></svg>">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f6f8fb; --card:#ffffff; --text:#0f172a; --muted:#516070; --line:#e3e8ef;
+  --accent:#1f6feb; --accent-soft:#e8f0fe; --good:#0f7b4b; --good-soft:#e6f6ee; --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0f17; --surface:#111722; --card:#141b27; --text:#e6edf6; --muted:#9aa8ba; --line:#243042;
+    --accent:#5b9dff; --accent-soft:#16233a; --good:#4fd18b; --good-soft:#12291f; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0f17; --surface:#111722; --card:#141b27; --text:#e6edf6; --muted:#9aa8ba; --line:#243042;
+  --accent:#5b9dff; --accent-soft:#16233a; --good:#4fd18b; --good-soft:#12291f; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;color:var(--text);letter-spacing:-.01em}
+.links{display:flex;gap:22px;align-items:center}
+.links a{color:var(--muted);font-size:.93rem}
+.links a:hover{color:var(--text);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:.94rem;border:1px solid var(--line);color:var(--text);background:var(--card)}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.small{padding:7px 12px;font-size:.88rem}
+.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:6px 9px;cursor:pointer;font-size:.9rem}
+.hero{padding-top:84px;padding-bottom:56px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:.92rem;letter-spacing:.02em}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.03em;margin:10px 0 16px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:680px;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:.83rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:1.6rem;letter-spacing:-.02em;margin:0 0 6px}
+.section-sub{color:var(--muted);margin:0 0 28px}
+.projects{display:grid;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+.card h3{margin:0;font-size:1.25rem;letter-spacing:-.01em}
+.card .tag{display:inline-block;font-size:.78rem;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:6px;margin-bottom:10px}
+.card p{margin:10px 0;color:var(--muted)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0}
+.metric{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.metric b{display:block;font-size:1.35rem;letter-spacing:-.02em;color:var(--text)}
+.metric span{font-size:.84rem;color:var(--muted)}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 18px}
+.stack span{font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.card ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+.card li{margin:4px 0}
+.card .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.honest{font-size:.86rem;color:var(--muted);border-left:3px solid var(--line);padding-left:10px;margin-top:12px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.mini h3{font-size:1.05rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.skill h3{font-size:.95rem;margin:0 0 8px}
+.skill p{margin:0;color:var(--muted);font-size:.92rem}
+.timeline{display:grid;gap:14px}
+.item{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.item b{display:block}
+.item span{color:var(--muted);font-size:.92rem}
+.contact{text-align:center}
+.contact .actions{justify-content:center}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center;border-top:1px solid var(--line)}
+@media (max-width:720px){
+  .links a:not(.btn){display:none}
+  .hero{padding-top:56px;padding-bottom:40px}
+  .card{padding:20px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="#top">Sri Charan Sripadi</a>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button class="theme" id="theme" aria-label="Toggle light or dark theme">◐</button>
+        <a class="btn small" href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="eyebrow">AI Engineer · Agentic AI, LLM Evaluation &amp; MLOps</div>
+    <h1>I build AI agents, and the evaluation, fine-tuning and deployment that make them trustworthy.</h1>
+    <p class="lead">MSc Advanced AI &amp; Data Science student at the University of Liverpool. My recent open-source work
+      closes gaps raised in Google's Agent Development Kit and AWS Strands Agents, with every result measured on
+      held-out data and published with its limitations.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn" href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <a class="btn" href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/sri-charan-sripadi-063146265" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="chips">
+      <span class="chip">Liverpool, UK · open to remote</span>
+      <span class="chip">Eligible to work in the UK without sponsorship</span>
+      <span class="chip">Hugging Face Transformers contributor</span>
+      <span class="chip">BTech GPA 9.4 / 10</span>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Featured projects</h2>
+      <p class="section-sub">Each targets a real, documented gap, and reports numbers measured on data the system never trained on.</p>
+      <div class="projects">
+
+        <article class="card">
+          <span class="tag">Fine-tuning · Calibration · MLOps</span>
+          <h3>TinyJudge: a fine-tuned, calibrated judge for AI-agent behaviour</h3>
+          <p>LLM judges are slow and costly for simple yes/no checks and give no calibrated confidence, a gap raised in
+            <a href="https://github.com/strands-agents/harness-sdk/issues/4585" target="_blank" rel="noopener">AWS Strands Agents #4585</a>.
+            TinyJudge fine-tunes ModernBERT-base (150M parameters) to check policy compliance, tool choice and whether replies
+            are faithful to tool results, then escalates only the uncertain cases to an LLM.</p>
+          <div class="metrics">
+            <div class="metric"><b>88.0% vs 81.2%</b><span>accuracy vs a 27B LLM judge, 208 real agent conversations</span></div>
+            <div class="metric"><b>ECE 0.20 → 0.10</b><span>calibration error halved; faithfulness accuracy 74% → 84%</span></div>
+            <div class="metric"><b>89.9% · 35%</b><span>cascade accuracy, with only 35% of cases sent to the LLM</span></div>
+          </div>
+          <ul>
+            <li>Versioned dataset (SHA-256 manifest) from rule-labelled agent trajectories and LLM-written replies.</li>
+            <li>MLflow tracking, Colab GPU training, Hugging Face Hub as a tagged model registry.</li>
+            <li>FastAPI service with Prometheus metrics and drift signals; Docker image built, smoke-tested and benchmarked by
+              GitHub Actions behind an accuracy quality gate before publishing.</li>
+          </ul>
+          <div class="stack"><span>PyTorch</span><span>Transformers</span><span>ModernBERT</span><span>MLflow</span><span>FastAPI</span><span>Docker</span><span>GitHub Actions</span><span>HF Hub</span></div>
+          <div class="row">
+            <a class="btn small primary" href="https://github.com/Charansripadi/tinyjudge" target="_blank" rel="noopener">Code</a>
+            <a class="btn small" href="https://huggingface.co/CharanSripadi/tinyjudge" target="_blank" rel="noopener">Model on Hugging Face</a>
+          </div>
+          <p class="honest">Limits: one demo domain; 38–85 real test examples per task, so small differences are within noise.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Multi-agent · Google ADK · Evaluation</span>
+          <h3>SkillMiner: turning agent traces into validated skills</h3>
+          <p>Agents re-derive the same procedures in every conversation and skip steps along the way. SkillMiner, built on
+            Google ADK, finds the workflows an agent keeps repeating and writes them as Agent Skills (SKILL.md) that ADK loads
+            natively. It is a working answer to
+            <a href="https://github.com/google/adk-python/issues/5398" target="_blank" rel="noopener">Google ADK #5398</a>.</p>
+          <div class="metrics">
+            <div class="metric"><b>ARI 0.93 vs 0.48</b><span>LLM intent mining vs a TF-IDF clustering baseline</span></div>
+            <div class="metric"><b>75% → 100%</b><span>procedure compliance with mined skills (pilot A/B, 8 pairs)</span></div>
+            <div class="metric"><b>1 → 0</b><span>policy violations; the refund skill learned the rule from traces</span></div>
+          </div>
+          <ul>
+            <li>ADK trace-recorder plugin, LLM customer simulator with personas and hidden ground truth.</li>
+            <li>Privacy Guard that redacts personal data using values seen in tool calls; paired A/B Validator (exact McNemar);
+              Drift Watcher that retires skills when tools change.</li>
+            <li>Found and fixed a retry bug that could re-run side-effecting tools, by retrying model calls instead of agent turns.</li>
+          </ul>
+          <div class="stack"><span>Google ADK</span><span>Multi-agent</span><span>LiteLLM</span><span>Groq</span><span>scikit-learn</span><span>Pytest</span></div>
+          <div class="row">
+            <a class="btn small primary" href="https://github.com/Charansripadi/skillminer" target="_blank" rel="noopener">Code</a>
+          </div>
+          <p class="honest">Limits: the pilot A/B is not yet statistically significant (p = 0.5), so skills stay "candidate" until a larger run.</p>
+        </article>
+
+        <div class="grid2">
+          <article class="card mini">
+            <span class="tag">Multimodal · Agentic</span>
+            <h3>FusionNet: multimodal video analysis</h3>
+            <p>Four cooperating agents (Loader, Vision, Audio, NLP) coordinated by a FusionController with &lt;200 ms inter-agent
+              latency, producing structured summaries, tags and emotion estimates with 91% label consistency over 50+ videos.</p>
+            <div class="stack"><span>PyTorch</span><span>NLP</span><span>Docker</span><span>Pytest</span></div>
+            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub →</a>
+          </article>
+          <article class="card mini">
+            <span class="tag">Computer vision · Audio</span>
+            <h3>Earlier work</h3>
+            <p><b>Driver Drowsiness Detection:</b> real-time OpenCV/Dlib web app, 95% detection accuracy over 200+ sessions,
+              24 FPS Flask API.<br><b>Speech Emotion Recognition:</b> 7 classes, 88% accuracy on 10,000 samples, &lt;300 ms
+              inference on AWS EC2.</p>
+            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub →</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience &amp; open source</h2>
+      <p class="section-sub">Independent engineering and contributions to widely used libraries.</p>
+      <div class="grid2">
+        <article class="card mini">
+          <h3>Independent AI Engineer</h3>
+          <p>2023 – present · open-source agent tooling and ML systems, from data generation and fine-tuning to Docker-based
+            deployment with CI/CD and thorough Pytest suites.</p>
+        </article>
+        <article class="card mini">
+          <h3>Contributor · Hugging Face Transformers</h3>
+          <p>2025 – present · <a href="https://github.com/huggingface/transformers/pull/46777" target="_blank" rel="noopener">PR #46777</a>
+            replaced wildcard imports with explicit named imports in the TimeSformer model module (resolves issue #45306).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="section-sub">What I use day to day.</p>
+      <div class="skills">
+        <div class="card skill"><h3>Agentic AI &amp; LLMs</h3><p>Google ADK, multi-agent systems, tool calling, Agent Skills, LLM-as-judge, agent simulation &amp; evaluation, RAG, LiteLLM</p></div>
+        <div class="card skill"><h3>ML &amp; fine-tuning</h3><p>PyTorch, TensorFlow, Hugging Face Transformers, ModernBERT, scikit-learn, calibration, A/B testing, computer vision, NLP</p></div>
+        <div class="card skill"><h3>MLOps &amp; serving</h3><p>MLflow, Hugging Face Hub, FastAPI, Flask, Docker, GitHub Actions, GHCR, Prometheus metrics, data versioning</p></div>
+        <div class="card skill"><h3>Cloud, data &amp; engineering</h3><p>AWS, GCP, Azure, Python, SQL, FAISS, Chroma, Pytest, Git, Linux, system design</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education &amp; certifications</h2>
+      <div class="timeline card">
+        <div class="item"><div><b>MSc Advanced Artificial Intelligence and Data Science</b><span>University of Liverpool, UK</span></div><span>2025 – present</span></div>
+        <div class="item"><div><b>BTech in Artificial Intelligence and Data Science</b><span>KL University, India · GPA 9.4 / 10, First Class with Distinction</span></div><span>2021 – 2025</span></div>
+        <div class="item"><div><b>TensorFlow Developer Certification</b><span>Google</span></div><span>2024</span></div>
+        <div class="item"><div><b>Google Cloud Associate Cloud Engineer</b><span>Google Cloud</span></div><span>2024</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's talk</h2>
+      <p class="section-sub">Open to AI/ML engineering roles, remote or in the UK.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:sricharansripadi618@gmail.com">sricharansripadi618@gmail.com</a>
+        <a class="btn" href="https://linkedin.com/in/sri-charan-sripadi-063146265" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://huggingface.co/CharanSripadi" target="_blank" rel="noopener">Hugging Face</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Sri Charan Sripadi</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+(function () {
+  var root = document.documentElement, key = 'theme';
+  try { var saved = localStorage.getItem(key); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  document.getElementById('theme').addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem(key, next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
