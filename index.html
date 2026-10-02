@@ -9,7 +9,11 @@
 <meta property="og:description" content="Agentic AI, LLM evaluation and MLOps. Open-source work on Google ADK and AWS Strands Agents gaps, with measured results.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://charansripadi.github.io/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://charansripadi.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charansripadi.github.io/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f6feb'/><text x='50' y='66' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SC</text></svg>">
 <style>
 :root{
@@ -51,6 +55,9 @@ h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.03em;marg
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .chip{font-size:.83rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+.chip.live{color:var(--good);background:var(--good-soft);border-color:transparent;font-weight:600}
+.chip.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--good);margin-right:7px;vertical-align:1px}
+.takeaway{font-size:1.02rem;color:var(--text)!important;font-weight:500}
 section{padding:56px 0;border-top:1px solid var(--line)}
 h2{font-size:1.6rem;letter-spacing:-.02em;margin:0 0 6px}
 .section-sub{color:var(--muted);margin:0 0 28px}
@@ -119,9 +126,9 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
       <a class="btn" href="https://linkedin.com/in/sri-charan-sripadi-063146265" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="chips">
-      <span class="chip">Liverpool, UK · open to remote</span>
+      <span class="chip live">Available now · full-time or contract</span>
+      <span class="chip">Liverpool, UK · remote or on-site</span>
       <span class="chip">Eligible to work in the UK without sponsorship</span>
-      <span class="chip">Hugging Face Transformers contributor</span>
       <span class="chip">BTech GPA 9.4 / 10</span>
     </div>
   </div>
@@ -139,6 +146,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
             <a href="https://github.com/strands-agents/harness-sdk/issues/4585" target="_blank" rel="noopener">AWS Strands Agents #4585</a>.
             TinyJudge fine-tunes ModernBERT-base (150M parameters) to check policy compliance, tool choice and whether replies
             are faithful to tool results, then escalates only the uncertain cases to an LLM.</p>
+          <p class="takeaway">In short: a small 150M model that judges agent replies more accurately than a 27B LLM, and hands only about a third of cases to the expensive LLM.</p>
           <div class="metrics">
             <div class="metric"><b>88.0% vs 81.2%</b><span>accuracy vs a 27B LLM judge, 208 real agent conversations</span></div>
             <div class="metric"><b>ECE 0.20 to 0.10</b><span>calibration error halved; faithfulness accuracy rose from 74% to 84%</span></div>
@@ -165,6 +173,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
             Google ADK, finds the workflows an agent keeps repeating and writes them as Agent Skills (SKILL.md) that ADK loads
             natively. It is a working answer to
             <a href="https://github.com/google/adk-python/issues/5398" target="_blank" rel="noopener">Google ADK #5398</a>.</p>
+          <p class="takeaway">In short: it reads an agent's past conversations, learns the procedures it should follow, and the agent then stops skipping steps.</p>
           <div class="metrics">
             <div class="metric"><b>ARI 0.93 vs 0.48</b><span>LLM intent mining vs a TF-IDF clustering baseline</span></div>
             <div class="metric"><b>75% to 100%</b><span>procedure compliance with mined skills (pilot A/B, 8 pairs)</span></div>
@@ -208,17 +217,18 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
   <section id="experience">
     <div class="wrap">
       <h2>Experience &amp; open source</h2>
-      <p class="section-sub">Independent engineering and contributions to widely used libraries.</p>
+      <p class="section-sub">Independent engineering and open-source work.</p>
       <div class="grid2">
         <article class="card mini">
-          <h3>Independent AI Engineer</h3>
-          <p>2023 - present. I build open-source agent tooling and ML systems, from data generation and fine-tuning to
+          <h3>Open-source and independent projects</h3>
+          <p>I build open-source agent tooling and ML systems, from data generation and fine-tuning to
             deployment with Docker, CI/CD and Pytest suites.</p>
         </article>
         <article class="card mini">
-          <h3>Contributor · Hugging Face Transformers</h3>
-          <p>2025 - present. <a href="https://github.com/huggingface/transformers/pull/46777" target="_blank" rel="noopener">PR #46777</a>
-            replaced wildcard imports with explicit named imports in the TimeSformer model module (resolves issue #45306).</p>
+          <h3>Pull request · Hugging Face Transformers</h3>
+          <p>2025. <a href="https://github.com/huggingface/transformers/pull/46777" target="_blank" rel="noopener">PR #46777</a>
+            proposed replacing wildcard imports with explicit named imports in the TimeSformer model module, for issue #45306.
+            It was closed without being merged.</p>
         </article>
       </div>
     </div>
@@ -252,7 +262,8 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center
   <section id="contact" class="contact">
     <div class="wrap">
       <h2>Let's talk</h2>
-      <p class="section-sub">Open to AI/ML engineering roles, remote or in the UK.</p>
+      <p class="section-sub">Available to start now for AI/ML engineering roles, full-time or contract.<br>
+        Remote (UK time zone) or on-site in the UK. No visa sponsorship needed.</p>
       <div class="actions">
         <a class="btn primary" href="mailto:sricharansripadi618@gmail.com">sricharansripadi618@gmail.com</a>
         <a class="btn" href="https://linkedin.com/in/sri-charan-sripadi-063146265" target="_blank" rel="noopener">LinkedIn</a>
