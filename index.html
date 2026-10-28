@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sri Charan Sripadi | AI Engineer</title>
-<meta name="description" content="AI Engineer building agentic AI systems and the evaluation, fine-tuning and MLOps around them. MSc Advanced AI & Data Science, University of Liverpool.">
-<meta property="og:title" content="Sri Charan Sripadi | AI Engineer">
-<meta property="og:description" content="Agentic AI, LLM evaluation and MLOps. Open-source work on Google ADK and AWS Strands Agents gaps, with measured results.">
+<title>Sri Charan Sripadi · AI Engineer</title>
+<meta name="description" content="Sri Charan Sripadi, AI engineer in Liverpool. LLM agents, small models that evaluate them, and voice AI. Notes on TinyJudge, haan and SkillMiner.">
+<meta property="og:title" content="Sri Charan Sripadi · AI Engineer">
+<meta property="og:description" content="LLM agents, small models that evaluate them, and voice AI.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://charansripadi.github.io/">
 <meta property="og:image" content="https://charansripadi.github.io/assets/og.png">
@@ -14,283 +14,418 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://charansripadi.github.io/assets/og.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f6feb'/><text x='50' y='66' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SC</text></svg>">
-<style>
-:root{
-  --bg:#ffffff; --surface:#f6f8fb; --card:#ffffff; --text:#0f172a; --muted:#516070; --line:#e3e8ef;
-  --accent:#1f6feb; --accent-soft:#e8f0fe; --good:#0f7b4b; --good-soft:#e6f6ee; --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0b0f17; --surface:#111722; --card:#141b27; --text:#e6edf6; --muted:#9aa8ba; --line:#243042;
-    --accent:#5b9dff; --accent-soft:#16233a; --good:#4fd18b; --good-soft:#12291f; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0b0f17; --surface:#111722; --card:#141b27; --text:#e6edf6; --muted:#9aa8ba; --line:#243042;
-  --accent:#5b9dff; --accent-soft:#16233a; --good:#4fd18b; --good-soft:#12291f; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:700;color:var(--text);letter-spacing:-.01em}
-.links{display:flex;gap:22px;align-items:center}
-.links a{color:var(--muted);font-size:.93rem}
-.links a:hover{color:var(--text);text-decoration:none}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:.94rem;border:1px solid var(--line);color:var(--text);background:var(--card)}
-.btn:hover{text-decoration:none;border-color:var(--accent)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn.primary:hover{filter:brightness(1.06)}
-.btn.small{padding:7px 12px;font-size:.88rem}
-.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:6px 9px;cursor:pointer;font-size:.9rem}
-.hero{padding-top:84px;padding-bottom:56px}
-.eyebrow{color:var(--accent);font-weight:600;font-size:.92rem;letter-spacing:.02em}
-h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.03em;margin:10px 0 16px}
-.lead{font-size:1.15rem;color:var(--muted);max-width:680px;margin:0 0 28px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.chip{font-size:.83rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
-.chip.live{color:var(--good);background:var(--good-soft);border-color:transparent;font-weight:600}
-.chip.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--good);margin-right:7px;vertical-align:1px}
-.takeaway{font-size:1.02rem;color:var(--text)!important;font-weight:500}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-size:1.6rem;letter-spacing:-.02em;margin:0 0 6px}
-.section-sub{color:var(--muted);margin:0 0 28px}
-.projects{display:grid;gap:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
-.card h3{margin:0;font-size:1.25rem;letter-spacing:-.01em}
-.card .tag{display:inline-block;font-size:.78rem;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:6px;margin-bottom:10px}
-.card p{margin:10px 0;color:var(--muted)}
-.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0}
-.metric{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.metric b{display:block;font-size:1.35rem;letter-spacing:-.02em;color:var(--text)}
-.metric span{font-size:.84rem;color:var(--muted)}
-.stack{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 18px}
-.stack span{font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
-.card ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
-.card li{margin:4px 0}
-.card .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.honest{font-size:.86rem;color:var(--muted);border-left:3px solid var(--line);padding-left:10px;margin-top:12px}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.mini h3{font-size:1.05rem}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.skill h3{font-size:.95rem;margin:0 0 8px}
-.skill p{margin:0;color:var(--muted);font-size:.92rem}
-.timeline{display:grid;gap:14px}
-.item{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.item b{display:block}
-.item span{color:var(--muted);font-size:.92rem}
-.contact{text-align:center}
-.contact .actions{justify-content:center}
-footer{padding:28px 0 40px;color:var(--muted);font-size:.86rem;text-align:center;border-top:1px solid var(--line)}
-@media (max-width:720px){
-  .links a:not(.btn){display:none}
-  .hero{padding-top:56px;padding-bottom:40px}
-  .card{padding:20px}
-}
-</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161513'/%3E%3Cpath d='M6 19c3 0 3-6 6-6s3 9 6 9 3-12 6-12 2 6 2 6' fill='none' stroke='%23E2552A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav aria-label="Main">
-      <a class="brand" href="#top">Sri Charan Sripadi</a>
-      <div class="links">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <button class="theme" id="theme" aria-label="Toggle light or dark theme">◐</button>
-        <a class="btn small" href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">CV</a>
-      </div>
-    </nav>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="nav">
+  <a class="mark" href="#top" aria-label="Back to top">
+    <svg viewBox="0 0 40 20" aria-hidden="true"><path d="M1 11c4 0 4-7 8-7s4 13 8 13 4-16 8-16 4 10 8 10 4-4 6-4"/></svg>
+    <span>Sri Charan Sripadi</span>
+  </a>
+  <nav class="links" aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#notes">Notes</a>
+    <a href="#open-source">Open source</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="theme" type="button" aria-label="Switch colour theme"><span></span></button>
+    <a class="btn btn-small" href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">CV</a>
   </div>
 </header>
 
 <main id="top">
-  <div class="wrap hero">
-    <div class="eyebrow">AI Engineer | Agentic AI, LLM Evaluation and MLOps</div>
-    <h1>I build AI agents, and I test them properly before they ship.</h1>
-    <p class="lead">I'm an MSc student in Advanced AI and Data Science at the University of Liverpool. My recent open-source
-      projects address open feature requests in Google's Agent Development Kit and AWS Strands Agents. I report each
-      result on held-out data, along with its limits.</p>
-    <div class="actions">
-      <a class="btn primary" href="#projects">See projects</a>
-      <a class="btn" href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      <a class="btn" href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://linkedin.com/in/sri-charan-sripadi-063146265" target="_blank" rel="noopener">LinkedIn</a>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="terrain" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <p class="eyebrow" data-reveal>AI Engineer · Liverpool, UK</p>
+      <h1 class="display" data-split>I build AI agents, <em>and the small models that check their work.</em></h1>
+      <p class="lede" data-reveal>Most of what I make sits where agents meet the real world: phone calls that get cut off too early, tools that get called twice, answers that drift from the data they came from. I fine-tune models for those problems, measure them on data they've never seen, and ship them behind tests.</p>
+      <div class="hero-cta" data-reveal>
+        <a class="btn" href="#notes">Read the notes</a>
+        <a class="btn btn-ghost" href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="text-link" href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
     </div>
-    <div class="chips">
-      <span class="chip live">Available now · full-time or contract</span>
-      <span class="chip">Liverpool, UK · remote or on-site</span>
-      <span class="chip">Eligible to work in the UK without sponsorship</span>
-      <span class="chip">BTech GPA 9.4 / 10</span>
+
+    <aside class="readout" aria-label="Live turn-detector illustration">
+      <div class="readout-top"><span class="dot"></span><span>turn detector · live</span></div>
+      <div class="readout-state" id="ro-state">caller speaking</div>
+      <div class="readout-bar"><span id="ro-bar"></span></div>
+      <div class="readout-meta"><span>p(end of turn)</span><span id="ro-p">0.04</span></div>
+      <p class="readout-note">Move your cursor over the field. The surface is a toy version of what haan listens to.</p>
+    </aside>
+
+    <a class="scroll-cue" href="#work" aria-label="Scroll to work"><span></span></a>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="numbers" aria-label="Results at a glance">
+    <div class="num" data-reveal>
+      <b><span data-count="88.0" data-dec="1">0</span>%</b>
+      <p>TinyJudge accuracy on 208 real agent conversations. A 27B LLM judge got 81.2%.</p>
     </div>
-  </div>
+    <div class="num" data-reveal>
+      <b><span data-count="31527" data-sep="1">0</span></b>
+      <p>test clips in 23 languages behind haan's phone-line results.</p>
+    </div>
+    <div class="num" data-reveal>
+      <b>#<span data-count="113">0</span></b>
+      <p>my pull request merged into Weights &amp; Biases' rai-toolkit.</p>
+    </div>
+    <div class="num" data-reveal>
+      <b><span data-count="9.4" data-dec="1">0</span><small>/10</small></b>
+      <p>BTech GPA, First Class with Distinction. Now an MSc at Liverpool.</p>
+    </div>
+  </section>
 
-  <section id="projects">
-    <div class="wrap">
-      <h2>Featured projects</h2>
-      <p class="section-sub">Each targets a real, documented gap, and reports numbers measured on data the system never trained on.</p>
-      <div class="projects">
+  <!-- WORK -->
+  <section id="work" class="section">
+    <div class="section-head">
+      <span class="label">01 · Selected work</span>
+      <h2 class="h2" data-split>Three projects, each started from <em>someone else's open issue.</em></h2>
+    </div>
 
-        <article class="card">
-          <span class="tag">Fine-tuning · Calibration · MLOps</span>
-          <h3>TinyJudge: a fine-tuned, calibrated judge for AI agent behaviour</h3>
-          <p>LLM judges are slow and costly for simple yes/no checks and give no calibrated confidence, a gap raised in
-            <a href="https://github.com/strands-agents/harness-sdk/issues/4585" target="_blank" rel="noopener">AWS Strands Agents #4585</a>.
-            TinyJudge fine-tunes ModernBERT-base (150M parameters) to check policy compliance, tool choice and whether replies
-            are faithful to tool results, then escalates only the uncertain cases to an LLM.</p>
-          <p class="takeaway">In short: a small 150M model that judges agent replies more accurately than a 27B LLM, and hands only about a third of cases to the expensive LLM.</p>
-          <div class="metrics">
-            <div class="metric"><b>88.0% vs 81.2%</b><span>accuracy vs a 27B LLM judge, 208 real agent conversations</span></div>
-            <div class="metric"><b>ECE 0.20 to 0.10</b><span>calibration error halved; faithfulness accuracy rose from 74% to 84%</span></div>
-            <div class="metric"><b>89.9% · 35%</b><span>cascade accuracy, with only 35% of cases sent to the LLM</span></div>
-          </div>
-          <ul>
-            <li>Versioned dataset (SHA-256 manifest) from rule-labelled agent trajectories and LLM-written replies.</li>
-            <li>MLflow tracking, Colab GPU training, Hugging Face Hub as a tagged model registry.</li>
-            <li>FastAPI service with Prometheus metrics and drift signals; Docker image built, smoke-tested and benchmarked by
-              GitHub Actions behind an accuracy quality gate before publishing.</li>
-          </ul>
-          <div class="stack"><span>PyTorch</span><span>Transformers</span><span>ModernBERT</span><span>MLflow</span><span>FastAPI</span><span>Docker</span><span>GitHub Actions</span><span>HF Hub</span></div>
-          <div class="row">
-            <a class="btn small primary" href="https://github.com/Charansripadi/tinyjudge" target="_blank" rel="noopener">Code</a>
-            <a class="btn small" href="https://huggingface.co/CharanSripadi/tinyjudge" target="_blank" rel="noopener">Model on Hugging Face</a>
-          </div>
-          <p class="honest">Limits: one demo domain, and only 38 to 85 real test examples per task, so small differences are within noise.</p>
-        </article>
+    <div class="cards">
+      <a class="card" href="#note-tinyjudge" data-tilt data-reveal>
+        <div class="card-glow"></div>
+        <span class="card-no">01</span>
+        <span class="card-tag">Evaluation · Fine-tuning · MLOps</span>
+        <h3>TinyJudge</h3>
+        <p>A 150M-parameter model that checks AI agents for policy breaches and wrong tool use, and beats a 27B LLM judge at it.</p>
+        <div class="card-foot"><span>88.0% vs 81.2%</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="#note-haan" data-tilt data-reveal>
+        <div class="card-glow"></div>
+        <span class="card-no">02</span>
+        <span class="card-tag">Voice AI · Audio · PyTorch</span>
+        <h3>haan</h3>
+        <p>A turn-taking model for voice agents on real phone lines, where 8 kHz audio makes them interrupt callers.</p>
+        <div class="card-foot"><span>11.09% → 8.64% cut-offs</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="#note-skillminer" data-tilt data-reveal>
+        <div class="card-glow"></div>
+        <span class="card-no">03</span>
+        <span class="card-tag">Multi-agent · Google ADK</span>
+        <h3>SkillMiner</h3>
+        <p>Reads an agent's past conversations, finds the procedures it keeps repeating, and writes them down as skills it can load.</p>
+        <div class="card-foot"><span>ARI 0.93 vs 0.48</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
 
-        <article class="card">
-          <span class="tag">Multi-agent · Google ADK · Evaluation</span>
-          <h3>SkillMiner: turning agent traces into validated skills</h3>
-          <p>Agents re-derive the same procedures in every conversation and skip steps along the way. SkillMiner, built on
-            Google ADK, finds the workflows an agent keeps repeating and writes them as Agent Skills (SKILL.md) that ADK loads
-            natively. It is a working answer to
-            <a href="https://github.com/google/adk-python/issues/5398" target="_blank" rel="noopener">Google ADK #5398</a>.</p>
-          <p class="takeaway">In short: it reads an agent's past conversations, learns the procedures it should follow, and the agent then stops skipping steps.</p>
-          <div class="metrics">
-            <div class="metric"><b>ARI 0.93 vs 0.48</b><span>LLM intent mining vs a TF-IDF clustering baseline</span></div>
-            <div class="metric"><b>75% to 100%</b><span>procedure compliance with mined skills (pilot A/B, 8 pairs)</span></div>
-            <div class="metric"><b>1 to 0</b><span>policy violations; the refund skill learned the rule from traces</span></div>
-          </div>
-          <ul>
-            <li>ADK trace-recorder plugin, LLM customer simulator with personas and hidden ground truth.</li>
-            <li>Privacy Guard that redacts personal data using values seen in tool calls; paired A/B Validator (exact McNemar);
-              Drift Watcher that retires skills when tools change.</li>
-            <li>Fixed a bug where retrying a rate-limited agent turn ran refund and email tools twice. Retries now happen per model call.</li>
-          </ul>
-          <div class="stack"><span>Google ADK</span><span>Multi-agent</span><span>LiteLLM</span><span>Groq</span><span>scikit-learn</span><span>Pytest</span></div>
-          <div class="row">
-            <a class="btn small primary" href="https://github.com/Charansripadi/skillminer" target="_blank" rel="noopener">Code</a>
-          </div>
-          <p class="honest">Limits: the pilot A/B is not yet statistically significant (p = 0.5), so skills stay "candidate" until a larger run.</p>
-        </article>
+  <!-- NOTES -->
+  <section id="notes" class="section notes">
+    <div class="section-head">
+      <span class="label">02 · Notes</span>
+      <h2 class="h2" data-split>Write-ups, <em>with the parts that didn't work.</em></h2>
+      <p class="section-sub" data-reveal>Each note says what the problem was, what I built, how I measured it, and where the result stops being trustworthy.</p>
+    </div>
 
-        <div class="grid2">
-          <article class="card mini">
-            <span class="tag">Multimodal · Agentic</span>
-            <h3>FusionNet: multimodal video analysis</h3>
-            <p>Four cooperating agents (Loader, Vision, Audio, NLP) coordinated by a FusionController with &lt;200 ms inter-agent
-              latency, producing structured summaries, tags and emotion estimates with 91% label consistency over 50+ videos.</p>
-            <div class="stack"><span>PyTorch</span><span>NLP</span><span>Docker</span><span>Pytest</span></div>
-            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">View on GitHub</a>
-          </article>
-          <article class="card mini">
-            <span class="tag">Computer vision · Audio</span>
-            <h3>Earlier work</h3>
-            <p><b>Driver Drowsiness Detection:</b> real-time OpenCV/Dlib web app, 95% detection accuracy over 200+ sessions,
-              24 FPS Flask API.<br><b>Speech Emotion Recognition:</b> 7 classes, 88% accuracy on 10,000 samples, &lt;300 ms
-              inference on AWS EC2.</p>
-            <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">View on GitHub</a>
-          </article>
+    <!-- Note: TinyJudge -->
+    <article class="note" id="note-tinyjudge">
+      <aside class="note-meta">
+        <span class="note-no">No. 01</span>
+        <h3 class="note-title">TinyJudge</h3>
+        <p class="note-kicker">A small judge for agent behaviour</p>
+        <dl>
+          <dt>Year</dt><dd>2026</dd>
+          <dt>Stack</dt><dd>PyTorch, ModernBERT, MLflow, FastAPI, Docker, GitHub Actions</dd>
+          <dt>Links</dt>
+          <dd class="meta-links">
+            <a href="https://github.com/Charansripadi/tinyjudge" target="_blank" rel="noopener">Code ↗</a>
+            <a href="https://huggingface.co/CharanSripadi/tinyjudge" target="_blank" rel="noopener">Model ↗</a>
+            <a href="https://github.com/strands-agents/harness-sdk/issues/4585" target="_blank" rel="noopener">Issue #4585 ↗</a>
+          </dd>
+        </dl>
+      </aside>
+      <div class="note-body">
+        <p class="dropcap" data-reveal>If you run an AI agent in production, you want something watching it: did it follow the refund policy, did it call the right tool, does its reply actually match what the tool returned? The usual answer is to ask a big LLM to grade it. That works, but it's slow and expensive for what are mostly yes-or-no questions, and it gives you no confidence score you can act on. Someone raised exactly this in <a href="https://github.com/strands-agents/harness-sdk/issues/4585" target="_blank" rel="noopener">AWS Strands Agents #4585</a>, and I wanted to see how small the judge could get.</p>
+
+        <h4 data-reveal>What I built</h4>
+        <p data-reveal>TinyJudge is <a href="https://huggingface.co/answerdotai/ModernBERT-base" target="_blank" rel="noopener">ModernBERT-base</a>, about 150M parameters, fine-tuned to answer three questions about an agent's turn: was the policy followed, was the right tool chosen, and is the reply faithful to the tool results. The training data comes from rule-labelled agent trajectories plus LLM-written replies, and the dataset is versioned with a SHA-256 manifest so a run can always be traced back to the exact data it saw.</p>
+
+        <figure class="fig fig-bars" data-reveal>
+          <figcaption><span class="label">Fig. 1</span> Accuracy on 208 held-out conversations from a real LLM agent</figcaption>
+          <div class="bar-row">
+            <span class="bar-name">TinyJudge <i>150M</i></span>
+            <div class="bar"><span data-bar="88.0"></span></div>
+            <span class="bar-val">88.0%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-name">LLM judge <i>27B</i></span>
+            <div class="bar bar-muted"><span data-bar="81.2"></span></div>
+            <span class="bar-val">81.2%</span>
+          </div>
+          <div class="fig-stats">
+            <div><b>0.20 → 0.10</b><span>calibration error (ECE) on the grounding task after Platt scaling</span></div>
+            <div><b>74% → 84%</b><span>grounding accuracy after calibration</span></div>
+            <div><b>89.9% · 35%</b><span>cascade accuracy, sending only 35% of cases to the LLM</span></div>
+          </div>
+        </figure>
+
+        <h4 data-reveal>Making the confidence mean something</h4>
+        <p data-reveal>A judge that says 0.9 should be right about 90% of the time. Out of the box it wasn't, so I fitted Platt calibration per task on a separate half of the real data. Calibration error on the grounding task halved, and once the scores were honest I could build a cascade: TinyJudge handles the cases it's sure about and only hands the uncertain ones to the big LLM. That got to 89.9% while sending about a third of the traffic upstream.</p>
+
+        <h4 data-reveal>Shipping it</h4>
+        <p data-reveal>Runs are tracked in MLflow and models are versioned on the <a href="https://huggingface.co/CharanSripadi/tinyjudge" target="_blank" rel="noopener">Hugging Face Hub</a>. The FastAPI service exposes Prometheus metrics and simple drift signals. In CI, GitHub Actions builds the Docker image, smoke-tests it, benchmarks it, and refuses to publish if accuracy drops below 85%. That gate has caught me more than once.</p>
+
+        <div class="callout" data-reveal>
+          <span class="label">Where it stops</span>
+          <p>It's one demo domain, and there are only 38 to 85 real test examples per task, so small differences between models are within noise. I'd want a second domain before calling it general.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Note: haan -->
+    <article class="note" id="note-haan">
+      <aside class="note-meta">
+        <span class="note-no">No. 02</span>
+        <h3 class="note-title">haan</h3>
+        <p class="note-kicker">Turn-taking for voice agents on phone lines</p>
+        <dl>
+          <dt>Year</dt><dd>2026</dd>
+          <dt>Stack</dt><dd>PyTorch, Whisper encoder, ONNX, audio augmentation, paired bootstrap</dd>
+          <dt>Links</dt>
+          <dd class="meta-links">
+            <a href="https://github.com/Charansripadi/haan" target="_blank" rel="noopener">Code ↗</a>
+            <a href="https://huggingface.co/CharanSripadi/haan" target="_blank" rel="noopener">Model ↗</a>
+            <a href="https://github.com/pipecat-ai/smart-turn/issues/42" target="_blank" rel="noopener">smart-turn #42 ↗</a>
+          </dd>
+        </dl>
+      </aside>
+      <div class="note-body">
+        <p class="dropcap" data-reveal>Haan is Hindi for "yes", the little word you say on a call to show you're still listening. Voice agents need the opposite skill too: knowing when you've actually finished. They decide that with end-of-turn models, and the open ones are trained on clean 16 kHz audio. Phone calls are 8 kHz and squashed into a narrow band, so the model hears a pause, guesses you're done, and talks over you. People asked about it in <a href="https://github.com/pipecat-ai/smart-turn/issues/42" target="_blank" rel="noopener">pipecat-ai/smart-turn #42</a>, so I measured how bad it was and tried to fix it.</p>
+
+        <figure class="fig fig-wave" data-reveal>
+          <figcaption><span class="label">Fig. 2</span> What goes wrong on a phone line <i>(illustration, not real data)</i></figcaption>
+          <canvas id="wave" aria-label="Animated illustration of a voice agent interrupting a caller during a pause"></canvas>
+          <div class="wave-legend">
+            <span><i class="sw sw-a"></i>studio-trained model cuts in at the pause</span>
+            <span><i class="sw sw-b"></i>phone-tuned model waits for the real end</span>
+          </div>
+        </figure>
+
+        <h4 data-reveal>What I did</h4>
+        <p data-reveal>I started from <a href="https://github.com/pipecat-ai/smart-turn" target="_blank" rel="noopener">Smart Turn v3.2</a>. Only the ONNX export was released, so I recovered PyTorch weights from it, exact to 6e-8, so I could fine-tune. Then I trained with telephony augmentation (8 kHz resampling, μ-law, the 300 to 3400 Hz band) against a control trained identically without it.</p>
+
+        <div class="table" data-reveal>
+          <div class="tr th"><span>Over a simulated phone line, 31,527 clips</span><span>Control</span><span>haan</span></div>
+          <div class="tr"><span>Callers wrongly cut off</span><span>11.09%</span><span class="hi">8.64%</span></div>
+          <div class="tr"><span>Accuracy</span><span>91.52%</span><span class="hi">92.78%</span></div>
+          <div class="tr"><span>Languages that improved</span><span>–</span><span class="hi">23 of 23</span></div>
+        </div>
+
+        <p data-reveal>Everything is reported with paired bootstrap 95% confidence intervals and per-language tables, because a single average across 23 languages hides a lot.</p>
+
+        <h4 data-reveal>The honest bit</h4>
+        <p data-reveal>I also put haan through LiveKit's public turn-detection benchmark in <a href="https://github.com/livekit/eot-bench/pull/18" target="_blank" rel="noopener">eot-bench #18</a>. On their clean benchmark audio it ties the base model. Their maintainer reproduced my numbers and confirmed the phone-line gains hold, but on clean audio no metric moved beyond noise, so the PR wasn't merged. That's the right call: the fix only matters on degraded audio, and the benchmark doesn't have real phone calls yet. I learned more from that review than from my own results table.</p>
+      </div>
+    </article>
+
+    <!-- Note: SkillMiner -->
+    <article class="note" id="note-skillminer">
+      <aside class="note-meta">
+        <span class="note-no">No. 03</span>
+        <h3 class="note-title">SkillMiner</h3>
+        <p class="note-kicker">Turning agent traces into skills</p>
+        <dl>
+          <dt>Year</dt><dd>2026</dd>
+          <dt>Stack</dt><dd>Google ADK, LiteLLM, Groq, scikit-learn, Pytest</dd>
+          <dt>Links</dt>
+          <dd class="meta-links">
+            <a href="https://github.com/Charansripadi/skillminer" target="_blank" rel="noopener">Code ↗</a>
+            <a href="https://github.com/google/adk-python/issues/5398" target="_blank" rel="noopener">ADK #5398 ↗</a>
+          </dd>
+        </dl>
+      </aside>
+      <div class="note-body">
+        <p class="dropcap" data-reveal>Agents re-derive the same procedure in every conversation and skip steps along the way: they issue a refund before checking the order, or forget to confirm the email. <a href="https://github.com/google/adk-python/issues/5398" target="_blank" rel="noopener">Google ADK #5398</a> asked for a way to learn those procedures from what the agent has already done. SkillMiner is my working answer.</p>
+
+        <figure class="fig fig-flow" data-reveal>
+          <figcaption><span class="label">Fig. 3</span> The pipeline</figcaption>
+          <svg viewBox="0 0 720 150" role="img" aria-label="Traces flow into the intent miner, then the skill writer, then a validated SKILL.md the agent loads">
+            <g class="flow-nodes">
+              <rect x="6" y="45" width="140" height="60" rx="10"/><text x="76" y="72">Agent traces</text><text class="sub" x="76" y="90">ADK plugin</text>
+              <rect x="196" y="45" width="140" height="60" rx="10"/><text x="266" y="72">Intent miner</text><text class="sub" x="266" y="90">LLM, ARI 0.93</text>
+              <rect x="386" y="45" width="140" height="60" rx="10"/><text x="456" y="72">Skill writer</text><text class="sub" x="456" y="90">PII redacted</text>
+              <rect class="accent" x="576" y="45" width="138" height="60" rx="10"/><text x="645" y="72">SKILL.md</text><text class="sub" x="645" y="90">A/B validated</text>
+            </g>
+            <g class="flow-lines">
+              <path d="M146 75 H196"/><path d="M336 75 H386"/><path d="M526 75 H576"/>
+              <path class="loop" d="M645 105 C645 145, 76 145, 76 105"/>
+            </g>
+          </svg>
+        </figure>
+
+        <h4 data-reveal>How it works</h4>
+        <p data-reveal>An ADK plugin records traces. To have something to mine without real customers, I wrote an LLM customer simulator with personas and hidden labels, so I always know the true intent behind each conversation. The intent miner groups conversations with an LLM and reached purity 1.00 and ARI 0.93, against 0.48 for a TF-IDF clustering baseline. The repeated workflows are written out as <a href="https://google.github.io/adk-docs/" target="_blank" rel="noopener">Agent Skills</a> (SKILL.md files) that ADK loads directly.</p>
+
+        <p data-reveal>Before a skill ships, a paired A/B validator runs the agent with and without it and compares them with an exact McNemar test. There's also PII redaction on the traces and a drift check for when tools change underneath a skill.</p>
+
+        <div class="callout" data-reveal>
+          <span class="label">The bug I'm glad I found</span>
+          <p>When the model provider rate-limited a turn, the whole turn was retried, which ran the refund and email tools twice. Retries now happen per model call instead. There are 23 offline tests so it all runs in CI without API keys.</p>
+        </div>
+
+        <p data-reveal>In a pilot A/B test with 8 pairs, procedure compliance went from 75% to 100% and policy violations from 1 to 0. Eight pairs is too few to be statistically significant, and I say so in the README.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- OPEN SOURCE -->
+  <section id="open-source" class="section">
+    <div class="section-head">
+      <span class="label">03 · Open source</span>
+      <h2 class="h2" data-split>Small contributions to <em>tools I actually use.</em></h2>
+    </div>
+    <ul class="oss">
+      <li data-reveal>
+        <span class="pill pill-ok">Merged</span>
+        <div>
+          <h3><a href="https://github.com/wandb/rai-toolkit/pull/113" target="_blank" rel="noopener">Weights &amp; Biases rai-toolkit · PR #113 ↗</a></h3>
+          <p>I wrote the TaskCompletionScorer, which checks an agent's recorded final state against the task's success criteria instead of trusting what the agent says it did. 93 tests, and the maintainer approved it after running 2,410 contract cases of their own.</p>
+        </div>
+      </li>
+      <li data-reveal>
+        <span class="pill">Submitted</span>
+        <div>
+          <h3><a href="https://github.com/huggingface/transformers/pull/46777" target="_blank" rel="noopener">Hugging Face Transformers · PR #46777 ↗</a></h3>
+          <p>A code-quality change: replacing wildcard imports with explicit ones in the TimeSformer module, for <a href="https://github.com/huggingface/transformers/issues/45306" target="_blank" rel="noopener">issue #45306</a>.</p>
+        </div>
+      </li>
+      <li data-reveal>
+        <span class="pill pill-muted">Reviewed, not merged</span>
+        <div>
+          <h3><a href="https://github.com/livekit/eot-bench/pull/18" target="_blank" rel="noopener">LiveKit eot-bench · PR #18 ↗</a></h3>
+          <p>haan's results on LiveKit's turn-detection benchmark. Reproduced by the maintainer; not merged because the gain only shows on phone audio. Details in the <a href="#note-haan">haan note</a>.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- EARLIER -->
+  <section class="section earlier">
+    <div class="section-head">
+      <span class="label">04 · Earlier work</span>
+      <h2 class="h2" data-split>Before agents, <em>vision and speech.</em></h2>
+    </div>
+    <div class="rows">
+      <div class="row" data-reveal>
+        <span class="row-year">2024</span>
+        <h3>FusionNet</h3>
+        <p>A multimodal video pipeline with four cooperating agents (loader, vision, audio and NLP) under a controller. Inter-agent latency under 200 ms, 91% label consistency over 50+ videos.</p>
+        <span class="row-stack">Python · Docker · Pytest</span>
+      </div>
+      <div class="row" data-reveal>
+        <span class="row-year">2024</span>
+        <h3>Driver drowsiness detection</h3>
+        <p>A real-time computer vision web app served through a Flask API at 24 FPS, with 95% accuracy over 200+ sessions.</p>
+        <span class="row-stack">OpenCV · Dlib · Flask</span>
+      </div>
+      <div class="row" data-reveal>
+        <span class="row-year">2024</span>
+        <h3>Speech emotion recognition</h3>
+        <p>Seven emotions at 88% accuracy on 10,000 samples, under 300 ms per prediction, deployed on AWS EC2 with Docker.</p>
+        <span class="row-stack">TensorFlow · Docker · AWS EC2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="section">
+    <div class="section-head">
+      <span class="label">05 · Certificates &amp; education</span>
+      <h2 class="h2" data-split>The paperwork, <em>verifiable.</em></h2>
+    </div>
+    <div class="certs">
+      <div class="cert" data-tilt data-reveal>
+        <span class="cert-issuer">Google Cloud</span>
+        <h3>Associate Cloud Engineer</h3>
+        <p>Issued June 2024 · valid to June 2027</p>
+        <div class="cert-links">
+          <a href="https://www.credly.com/badges/404d8665-1225-4c0d-b347-27f6ab151874" target="_blank" rel="noopener">Verify on Credly ↗</a>
+          <a href="assets/certificates/google-cloud-ace.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+      <div class="cert" data-tilt data-reveal>
+        <span class="cert-issuer">Google · TensorFlow</span>
+        <h3>TensorFlow Developer Certificate</h3>
+        <p>Issued April 2024</p>
+        <div class="cert-links">
+          <a href="https://www.credential.net/83613edd-5ad7-44da-ab5e-368d94f597c2#acc.evx0JHml" target="_blank" rel="noopener">Verify credential ↗</a>
+          <a href="assets/certificates/tensorflow-developer.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+      <div class="cert" data-tilt data-reveal>
+        <span class="cert-issuer">IBM Developer Skills Network</span>
+        <h3>Python</h3>
+        <p>Issued September 2024</p>
+        <div class="cert-links">
+          <a href="https://courses.etrain.skillsnetwork.site/certificates/4e257de5e4b14e49a1db90fcaed63a6b" target="_blank" rel="noopener">Verify ↗</a>
+          <a href="assets/certificates/ibm-python.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+      <div class="cert" data-tilt data-reveal>
+        <span class="cert-issuer">Automation Anywhere</span>
+        <h3>Essentials RPA Professional</h3>
+        <p>Automation 360 · 2023</p>
+        <div class="cert-links">
+          <a href="assets/certificates/automation-anywhere-a360.pdf" target="_blank" rel="noopener">PDF</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="experience">
-    <div class="wrap">
-      <h2>Experience &amp; open source</h2>
-      <p class="section-sub">Independent engineering and open-source work.</p>
-      <div class="grid2">
-        <article class="card mini">
-          <h3>Open-source and independent projects</h3>
-          <p>I build open-source agent tooling and ML systems, from data generation and fine-tuning to
-            deployment with Docker, CI/CD and Pytest suites.</p>
-        </article>
-        <article class="card mini">
-          <h3>Pull request · Hugging Face Transformers</h3>
-          <p>2025. <a href="https://github.com/huggingface/transformers/pull/46777" target="_blank" rel="noopener">PR #46777</a>
-            proposed replacing wildcard imports with explicit named imports in the TimeSformer model module, for issue #45306.
-            It was closed without being merged.</p>
-        </article>
+    <div class="edu">
+      <div class="edu-row" data-reveal>
+        <span>2026 – 2027</span>
+        <h3>University of Liverpool</h3>
+        <p>MSc Advanced Artificial Intelligence and Data Science</p>
+      </div>
+      <div class="edu-row" data-reveal>
+        <span>2021 – 2025</span>
+        <h3>KL University, India</h3>
+        <p>BTech Artificial Intelligence and Data Science · GPA 9.4/10, First Class with Distinction</p>
       </div>
     </div>
   </section>
 
-  <section id="skills">
-    <div class="wrap">
-      <h2>Skills</h2>
-      <p class="section-sub">What I use day to day.</p>
-      <div class="skills">
-        <div class="card skill"><h3>Agentic AI &amp; LLMs</h3><p>Google ADK, multi-agent systems, tool calling, Agent Skills, LLM-as-judge, agent simulation &amp; evaluation, RAG, LiteLLM</p></div>
-        <div class="card skill"><h3>ML &amp; fine-tuning</h3><p>PyTorch, TensorFlow, Hugging Face Transformers, ModernBERT, scikit-learn, calibration, A/B testing, computer vision, NLP</p></div>
-        <div class="card skill"><h3>MLOps &amp; serving</h3><p>MLflow, Hugging Face Hub, FastAPI, Flask, Docker, GitHub Actions, GHCR, Prometheus metrics, data versioning</p></div>
-        <div class="card skill"><h3>Cloud, data &amp; engineering</h3><p>AWS, GCP, Azure, Python, SQL, FAISS, Chroma, Pytest, Git, Linux, system design</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="wrap">
-      <h2>Education &amp; certifications</h2>
-      <div class="timeline card">
-        <div class="item"><div><b>MSc Advanced Artificial Intelligence and Data Science</b><span>University of Liverpool, UK</span></div><span>2026 - 2027</span></div>
-        <div class="item"><div><b>BTech in Artificial Intelligence and Data Science</b><span>KL University, India · GPA 9.4 / 10, First Class with Distinction</span></div><span>2021 - 2025</span></div>
-        <div class="item"><div><b>TensorFlow Developer Certification</b><span>Google</span></div><span>2024</span></div>
-        <div class="item"><div><b>Google Cloud Associate Cloud Engineer</b><span>Google Cloud</span></div><span>2024</span></div>
-      </div>
-    </div>
-  </section>
-
+  <!-- CONTACT -->
   <section id="contact" class="contact">
-    <div class="wrap">
-      <h2>Let's talk</h2>
-      <p class="section-sub">Available to start now for AI/ML engineering roles, full-time or contract.<br>
-        Remote (UK time zone) or on-site in the UK. No visa sponsorship needed.</p>
-      <div class="actions">
-        <a class="btn primary" href="mailto:sricharansripadi618@gmail.com">sricharansripadi618@gmail.com</a>
-        <a class="btn" href="https://linkedin.com/in/sri-charan-sripadi-063146265" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://huggingface.co/CharanSripadi" target="_blank" rel="noopener">Hugging Face</a>
-      </div>
+    <span class="label">06 · Contact</span>
+    <h2 class="display contact-title" data-split>Working on agents, evals or voice? <em>I'd like to hear about it.</em></h2>
+    <a class="mail" href="mailto:sricharansripadi618@gmail.com">sricharansripadi618@gmail.com</a>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/sri-charan-sripadi-063146265" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/Charansripadi" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://huggingface.co/CharanSripadi" target="_blank" rel="noopener">Hugging Face ↗</a>
+      <a href="assets/Sri_Charan_Sripadi_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">© <span id="year"></span> Sri Charan Sripadi</div>
+<footer class="foot">
+  <span>© 2026 Sri Charan Sripadi</span>
+  <span id="clock">Liverpool</span>
 </footer>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-(function () {
-  var root = document.documentElement, key = 'theme';
-  try { var saved = localStorage.getItem(key); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
-  document.getElementById('theme').addEventListener('click', function () {
-    var dark = root.getAttribute('data-theme') === 'dark' ||
-      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    var next = dark ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem(key, next); } catch (e) {}
-  });
-})();
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script type="module" src="main.js"></script>
 </body>
 </html>
